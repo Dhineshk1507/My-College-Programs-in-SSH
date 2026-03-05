@@ -1,0 +1,158 @@
+==============
+PART - A
+==============
+1. What will be the output of the following Python code snippet?
+for i in [1, 2, 3, 4][::-1]:
+ print(i, end=' ')
+ a) 4 3 2 1
+ b) error
+ c) 1 2 3 4
+ d) none of the mentioned
+ 2. What would be the result of executing the following code?
+ sum = 0
+ for i in range(5, 0, -2):
+ sum += i > sum
+ print(sum)
+ a) 0
+ b) 1
+ c) 2
+ d) 3
+ 3. What will be the output of the following Python code?
+ >>>list1 = [1, 3]
+ >>>list2 = list1
+ >>>list1[0] = 4
+ >>>print(list2)
+ a) [1, 4]
+ b) [1, 3, 4]
+ c) [4, 3]
+ d) [1, 3]
+ 4. In which data type, indexing is not valid?
+ a) List
+ b) String
+ c) Dictionary
+ d) None of the above
+ 5. How can we create an empty list in python?
+ a) list=()
+ b) list.null
+ c) null.list
+ d) list=[]
+ 6. What will be the output of above Python code?
+ str1="6/4"
+ print("str1")
+ a) 1
+ b) 6/4
+ c) 1.5
+ d) str1
+ 7. Which of the following will result in an error?
+  str1="python"
+  a) str1[1]="x"
+  b) print(str1[2])
+  c) print(str1[0:9])
+  d) Both (b) and (c)
+  8. What will be the output of the following Python statement?
+  >>>"abcd"[2:]
+  a) A
+  b) Ab
+  c) Cd
+  d) Dc
+  9. What will be the output of the following Python program?
+  i = 0
+  while i < 5:
+   print(i)
+    i += 1
+     if i == 3:
+      break
+      else:
+       print(0)
+       a) error
+       b) 0 1 2 0
+       c) 0 1 2
+       d) none of the mentioned
+       10. What will be the output of the following Python code?
+       >>> str1 = 'hello'
+       >>> str2 = ','
+       >>> str3 = 'world'
+       >>> str1[-1:]
+       a) olleh
+       b) hello
+       c) h
+       d) o
+================
+PART - B
+================
+1. Consecutive Prime Sum
+Question – Some prime numbers can be expressed as a sum of other consecutive
+prime numbers.
+For example
+5 = 2 + 3,
+17 = 2 + 3 + 5 + 7,
+41 = 2 + 3 + 5 + 7 + 11 + 13.
+Your task is to find out how many prime numbers which satisfy this property are
+present in the range 3 to N subject to a constraint that summation should always start
+with number 2.Write code to find out the number of prime numbers that satisfy the
+above-mentioned property in a given range.
+Input Format: First line contains a number N
+Output Format: Print the total number of all such prime numbers which are less than
+or equal to N.
+Constraints: 2<N<=12,000,000,000
+2. Remove Consecutive Duplicates
+Given a string, S, remove all the consecutive duplicates that are present in the given string.
+That means, if 'aaa' is present in the string then it should become 'a' in the output string.
+Input format:
+String S
+Output format:
+Modified string
+Constraints:
+0 <= |S| <= 10^7
+where |S| represents the length of string, S.
+Sample Input 1:
+aabccbaa
+Sample Output 1:
+abcba
+Sample Input 2:
+xxyyzxx
+Sample Output 2:
+xyzx
+==================
+PART - C
+==================
+1. Palindrome
+In this 3 Palindrome, Given an input string word, split the string into exactly 3 palindromic
+substrings. Working from left to right, choose the smallest split for the first substring that still
+allows the remaining word to be split into 2 palindromes.
+Similarly, choose the smallest second palindromic substring that leaves a third palindromic
+substring.
+If there is no way to split the word into exactly three palindromic substrings, print
+“Impossible” (without quotes). Every character of the string needs to be consumed.
+Cases not allowed –
+• After finding 3 palindromes using above instructions, if any character of the original
+string remains unconsumed.
+• No character may be shared in forming 3 palindromes.
+Constraints
+• 1 <= the length of input sting <= 1000
+Input
+• First line contains the input string consisting of characters between [a-z].
+Output
+• Print 3 substrings one on each line.
+Example 1
+Input
+nayannamantenet
+Output
+nayan
+naman
+tenet
+Explanation
+• The original string can be split into 3 palindromes as mentioned in the output.
+• However, if the input was nayanamantenet, then the answer would be “Impossible”.
+Example 2
+Input
+aaaaa
+Output
+a
+a
+aaa
+Explanation
+• The other ways to split the given string into 3 palindromes are as follows –
+• [a, aaa, a], [aaa, a, a], [aa, aa, a], etc.
+• Since we want to minimize the length of the first palindromic substring using left to
+right processing, the correct way to split is [a, a, aaa].

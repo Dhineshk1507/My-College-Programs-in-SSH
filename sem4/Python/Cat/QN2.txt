@@ -1,0 +1,214 @@
+=================================================
+PART - A
+=================================================
+1. What will be the output of the following code?
+my_string = "Mepco"
+print(my_string[1])
+a) h
+b) e
+c) l
+d) o
+
+ANS: b) e
+
+2. Which method is used to add an element to a set in Python?
+a) add()
+b) insert()
+c) append()
+d) update()
+
+ANS: a) add()
+
+3. What is the result of the following operation in Python?
+"Mepco" + "Schlenk"
+a) Mepco + Schlenk
+b) Mepco Schlenk
+c) MepcoSchlenk
+d) Error: Strings cannot be concatenated
+
+ANS: c) MepcoSchlenk
+
+4. What will be the output of the following code?
+my_string = "captain"
+print(my_string[::-1])
+a) captain
+b) acptain
+c) pacnait
+d) niatpac
+
+ANS: d)niatpac
+
+5. What will be the output of the following code?
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+my_dict['d'] = 4
+print(my_dict)
+a) {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+b) {'a': 1, 'b': 2, 'c': 3}
+c) {'d': 4}
+d) Error: 'd' is not a valid key
+
+ANS: a) {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+6. Which of the following is a valid Python variable name?
+a) 2variable
+b) my_variable
+c) global_variable
+d) all of the above
+
+ANS: a) 2variable
+
+7. What is the output of the following Python code snippet?
+x = 5
+y = 2
+print(x ** y)
+a) 7
+b) 10
+c) 25
+d) 32
+
+ANS: c) 25
+
+8. What will be the output of the following code?
+my_tuple = (1, 2, 3, 4)
+print(my_tuple[2])
+a) 1
+b) 2
+c) 3
+d) 4
+
+ANS: c) 3
+
+9. What is the correct way to create a multiline string in Python?
+a) my_string = "Line 1\nLine 2\nLine 3"
+b) my_string = "Line 1, Line 2, Line 3"
+c) my_string = """Line 1\nLine 2\nLine 3"""
+d) my_string = 'Line 1\nLine 2\nLine 3'
+
+ANS: a) my_string = "Line 1\nLine 2\nLine 3"
+
+10. Which of the following is the correct syntax to format a string using the format() method in
+Python?
+a) "{} {}".format(arg1, arg2)
+b) format("{} {}", arg1, arg2)
+c) "{} {}".format(arg1)(arg2)
+d) format("{} {}", (arg1, arg2))
+
+ANS: a) "{} {}".format(arg1, arg2)
+
+===============
+PART - B
+===============
+1. Write a Python program to calculate and display the grades of students based on their scores in
+a class. Your program should perform the following tasks:
+Prompt the user to enter the total number of students in the class.
+For each student, prompt the user to enter their name and their score as a percentage (out of 100).
+Calculate the grade for each student based on the following criteria:
+✓ A grade of 'A' for scores 90 and above.
+✓ A grade of 'B' for scores between 80 and 89 (inclusive).
+✓ A grade of 'C' for scores between 70 and 79 (inclusive).
+✓ A grade of 'D' for scores between 60 and 69 (inclusive).
+✓ A grade of 'F' for scores below 60.
+Display the following statistics:
+The name and score of each student.
+The corresponding grade for each student.
+Sample Input:
+Enter the total number of students: 3
+Enter name of student 1: JOHN
+Enter score of student 1 (percentage): 85
+Enter name of student 2: BABU
+Enter score of student 2 (percentage): 72
+Enter name of student 3: CHANDRU
+Enter score of student 3 (percentage): 95
+Sample Output:
+Grade Report:
+-------------------------
+Student Name Score Grade
+-------------------------
+JOHN 85 B
+BABU 72 C
+CHANDRU 95 A
+-------------------------
+ANS:
+
+
+2. Write a Python program to display the palindromic triangle.
+You are given a positive integer N.
+Your task is to print a palindromic triangle of size N.
+For example, a palindromic triangle of size 5 is:
+1
+121
+12321
+1234321
+123454321
+You can't take more than two lines. The first line (a for-statement) is already written for you.
+You have to complete the code using exactly one print statement.
+Note:
+Using anything related to strings will give a score of 0.
+Using more than one for-statement will give a score of 0.
+Input Format
+A single line of input containing the integer N.
+Constraints
+• 0 < N < 10
+Output Format
+Print the palindromic triangle of size N as explained above.
+Sample Input
+5
+Sample Output
+1
+121
+12321
+1234321
+123454321
+===============
+PART - C
+===============
+1. Create a Python program to manage a Stationary shopping list. Your program should
+allow users to perform various operations related to adding, viewing, and managing items
+on the list. The program should have the following functionalities:
+Add Items to the List: Allow the user to add items to the shopping list.
+Each item should have the following details:
+✓ Item name
+✓ Quantity
+✓ Price per unit
+• View Items in the List: Display all the items currently on the shopping list, including
+their names, quantities, and prices per unit.
+• Calculate Total Cost: Calculate and display the total cost of all the items on the list.
+• Update Item Quantity: Allow the user to update the quantity of a specific item on the list.
+• Remove Items from the List: Allow the user to remove a specific item from the list.
+• Search for Items: Allow the user to search for a specific item by name and display its
+details if found.
+• Exit the Program: Provide an option for the user to exit the program.
+Ensure that the program provides a user-friendly interface and handles user input and errors
+gracefully.
+Sample Input and Output:
+Welcome to Shopping List!
+1. Add Item to List
+2. View Items in List
+3. Calculate Total Cost
+4. Update Item Quantity
+5. Remove Item from List
+6. Search for Item
+7. Exit
+Enter your choice: 1
+Enter item name: Soap
+Enter quantity: 5
+Enter price per unit: Rs. 25
+Item added to the list!
+Enter your choice: 2
+Items in List:
+1. Apple - Quantity: 5, Price per unit: Rs. 25
+Enter your choice: 3
+Total Cost: Rs.125
+Enter your choice: 4
+Enter the name of the item to update: Soap
+Enter new quantity: 10
+Quantity updated successfully!
+Enter your choice: 5
+Enter the name of the item to remove: Soap
+Item removed from the list!
+Enter your choice: 6
+Enter item name to search: Book
+Item not found in the list.
+Enter your choice: 7
+Exiting Shopping List. Goodbye!
+
