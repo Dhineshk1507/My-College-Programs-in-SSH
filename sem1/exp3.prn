@@ -1,0 +1,103 @@
+Script started on Wednesday 01 November 2023 03:54:24 PM IST
+[?1034h[23bee037@mepcolinux ~]$cat plndrm.c
+#include<stdio.h>
+int main(){
+   int a1,a2,r;
+   printf("enter number");
+   scanf("%d",&a1);
+   a2=a1;
+   while(a1>0){
+      r=r*10+(a1%10);
+      a1/=10;
+   }
+   if(a2==r){ printf("it is palindrome"); }
+   else{ printf("it is not palindrome"); }
+   return 0;
+}
+[23bee037@mepcolinux ~]$vi [K[K[Kcc plndrm.c
+[23bee037@mepcolinux ~]$./a.out
+enter number121
+it is palindrome[23bee037@mepcolinux ~]$cat angstrom.c
+#include<stdio.h>
+int main(){
+   int a1,a2,n,r;
+   printf("enter number");
+   scanf("%d",&a1);
+   a2=a1;
+   while(a1>0){
+      n=a1%10;
+      r+=n*n*n;
+      a1/=10;
+   }
+   if(a2==r){ printf("it is angstrom"); }
+   else{ printf("it is not angstrom"); }
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc angs[Kstrom.c
+[23bee037@mepcolinux ~]$./.[Ka.out
+enter number407
+it is angstrom[23bee037@mepcolinux ~]$cat prime.c
+#include<stdio.h>
+int main(){
+   int a,i,t=0;
+   printf("enter number");
+   scanf("%d",&a);
+   for(i=2;i<a;i++){
+      if(a%i==0){ t=1; break; }
+   }
+   if(t==0){
+      printf("%d is prime number",a);
+   }
+   else{
+      printf("%d is not prime number",a);
+   }
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc prime.c
+[23bee037@mepcolinux ~]$./a.out
+enter number7
+7 is prime number[23bee037@mepcolinux ~]$a[Kcat fib.c
+#include<stdio.h>
+int main(){
+   int a=0,b=1,c,i,n;
+   printf("enter limit");
+   scanf("%d",&n);
+   printf("%d,%d,",a,b);
+   for(i=1;i<n;i++){
+      c=a+b;
+      a=b;
+      b=c;
+      printf("%d,",c);
+   }
+   printf("...");
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc fib.c
+[23bee037@mepcolinux ~]$./a.oi[Kut
+enter limit6
+0,1,1,2,3,5,8,...[23bee037@mepcolinux ~]$cat rgttri.c
+#include<stdio.h>
+int main(){
+   int i,j,n;
+   printf("enter limit");
+   scanf("%d",&n);
+   for(i=0;i<=n;i++){
+      for(j=0;j<=i;j++){
+	 printf("*");
+      }
+      printf("\n");
+   }
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc rgtti[Kri.v[Kc
+[23bee037@mepcolinux ~]$,[K./a.out
+enter limit4
+*
+**
+***
+****
+*****
+[23bee037@mepcolinux ~]$exit
+exit
+
+Script done on Wednesday 01 November 2023 03:57:06 PM IST

@@ -1,0 +1,63 @@
+Script started on Friday 10 May 2024 04:02:23 PM IST
+[?1034h[23bee037@mepcolinux linuxex7]$cat geekfile.txt
+unix is great os. unix is opensource. unix is free os.
+learn operating system.
+Unix linux which one you choose.
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+[23bee037@mepcolinux linuxex7]$grep -i "unix" geekfile.txt
+unix is great os. unix is opensource. unix is free os.
+Unix linux which one you choose.
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+[23bee037@mepcolinux linuxex7]$grep -c "unix" geekfile.txt
+2
+[23bee037@mepcolinux linuxex7]$grep -l "unix" *
+geekfile.txt
+[23bee037@mepcolinux linuxex7]$grep -w "unix" geekfile.txt
+unix is great os. unix is opensource. unix is free os.
+uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+[23bee037@mepcolinux linuxex7]$grep -o "unix" geekfile.txt
+unix
+unix
+unix
+unix
+unix
+unix
+[23bee037@mepcolinux linuxex7]$grep -n "unix" geekfile.txt
+1:unix is great os. unix is opensource. unix is free os.
+4:uNix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+[23bee037@mepcolinux linuxex7]$grep "unix" geekfile.txt
+unix is great os. unix is opensource. unix is free os.
+[23bee037@mepcolinux linuxex7]$cat contacts.txt
+Bob Jones
+Leslie Smith
+Dana David
+Susan Gee
+Leonard Schmidt
+Linda Gray
+Terry Jones
+Colin Doe
+Jenny Case
+[23bee037@mepcolinux linuxex7]$cat contacts.txt|sort
+Bob Jones
+Colin Doe
+Dana David
+Jenny Case
+Leonard Schmidt
+Leslie Smith
+Linda Gray
+Susan Gee
+Terry Jones
+[23bee037@mepcolinux linuxex7]$cat contacts.txt|sort -r
+Terry Jones
+Susan Gee
+Linda Gray
+Leslie Smith
+Leonard Schmidt
+Jenny Case
+Dana David
+Colin Doe
+Bob Jones
+[23bee037@mepcolinux linuxex7]$exit
+exit
+
+Script done on Friday 10 May 2024 04:11:28 PM IST

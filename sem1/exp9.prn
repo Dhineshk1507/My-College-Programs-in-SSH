@@ -1,0 +1,53 @@
+Script started on Wednesday 27 December 2023 02:31:02 PM IST
+[?1034h[23bee037@mepcolinux ~]$cat empsal,[K.c
+#include<stdio.h>
+union employee{
+   char name[20];
+   int empno;
+   int bp;
+};
+int main(){
+   int i,n;
+   float ts;
+   union employee c[60];
+   printf("enter no of employees");
+   scanf("%d",&n);
+   for(i=0;i<n;i++){
+      printf("\nenter name ");
+      scanf("%s",c[i].name);
+      printf("enter no ");
+      scanf("%d",&c[i].empno);
+      printf("enter pay ");
+      scanf("%d",&c[i].bp);
+   }
+   for(i=0;i<n;i++){
+      ts=c[i].bp+0.5*c[i].bp+0.05*c[i].bp;
+      printf("\nemployee details are: ");
+      printf("\ntotal %f",ts);
+   }
+}
+[23bee037@mepcolinux ~]$cc empsal.c
+[23bee037@mepcolinux ~]$,[K./ao[K.out
+enter no of employees3
+
+enter name dhinesh
+enter no 200
+enter pay 200
+
+enter name dharun
+enter no 21 01
+enter pay 300
+
+enter name gokul
+enter no 202
+enter pay 400
+
+employee details are: 
+total 310.000000
+employee details are: 
+total 465.000000
+employee details are: 
+total 620.000000[23bee037@mepcolinux ~]$exit
+exit
+
+Script done on Wednesday 27 December 2023 02:32:05 PM IST

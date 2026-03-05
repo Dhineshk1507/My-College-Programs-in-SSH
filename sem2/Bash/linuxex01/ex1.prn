@@ -1,0 +1,39 @@
+Script started on Friday 01 March 2024 04:32:32 PM IST
+[?1034h[23bee037@mepcolinux linuxex1]$ls
+ex1.prn  textfile1.txt	textfile.txt
+[23bee037@mepcolinux linuxex1]$ls =[K-l
+total 4
+-rw-r--r--. 1 23bee037 eee-ug-2023a  0 Mar  1 16:32 ex1.prn
+-rw-r--r--. 1 23bee037 eee-ug-2023a  0 Mar  1 16:31 textfile1.txt
+-rw-r--r--. 1 23bee037 eee-ug-2023a 26 Mar  1 16:31 textfile.txt
+[23bee037@mepcolinux linuxex1]$ls -a
+.  ..  ex1.prn	textfile1.txt  textfile.txt
+[23bee037@mepcolinux linuxex1]$cd ..
+[23bee037@mepcolinux ~]$pwd
+/run/media/root/Data/student/eee/ug/be2023/a/23bee037
+[23bee037@mepcolinux ~]$mkdir test
+[23bee037@mepcolinux ~]$cd linuxex1
+[23bee037@mepcolinux linuxex1]$cat textfile,[K,.[K[K.txt
+hello linux
+bb
+aa
+dd
+ii
+a
+[23bee037@mepcolinux linuxex1]$who -a[Km
+23bee037 pts/205      2024-03-01 16:32
+[23bee037@mepcolinux linuxex1]$wc textfile.txt
+ 6  7 26 textfile.txt
+[23bee037@mepcolinux linuxex1]$grep aa[K[Kaa textfile.txt
+aa
+[23bee037@mepcolinux linuxex1]$sot [K\[K[K[K[Ksort file[K[K[K[Ktextfile.txt|uniq
+a
+aa
+bb
+dd
+hello linux
+ii
+[23bee037@mepcolinux linuxex1]$eirt[K[K[Kxit
+exit
+
+Script done on Friday 01 March 2024 04:35:56 PM IST

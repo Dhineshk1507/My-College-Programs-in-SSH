@@ -1,0 +1,67 @@
+Script started on Wednesday 11 October 2023 04:07:00 PM IST
+[?1034h[23bee037@mepcolinux ~]$cat sumtwo.c
+#include<stdio.h>
+int main(){
+   int a,b,c;
+   printf("enter two numbers ");
+   scanf("%d%d",&a,&b);
+   c=a+b;
+   printf("%d+%d=%d",a,b,c);
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc sumtwo.c
+[23bee037@mepcolinux ~]$./a.out
+enter two numbers 2
+3
+2+3=5[23bee037@mepcolinux ~]$cat areacircle.c
+#include<stdio.h>
+int main(){
+   float r;
+   printf("enter radius");
+   scanf("%f",&r);
+   printf("area of circle: %f",3.14*r*r);
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc areacircle.c
+[23bee037@mepcolinux ~]$./a.out
+enter radius3
+area of circle: 28.260000[23bee037@mepcolinux ~]$cat ctof.c
+//celsius to farenheit
+#include<stdio.h>
+int main(){
+   float F,C;
+   printf("enter value in celcius ");
+   scanf("%f",&C);
+   F=(C*(9/5))+32;
+   printf("farenheit = %f",F);
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc ctof.c
+[23bee037@mepcolinux ~]$.a[K/a.out
+enter value in celcius 28
+farenheit = 60.000000[23bee037@mepcolinux ~]$cat swap.c
+//swapping numbers
+#include<stdio.h>
+int main(){
+   int a,b,temp;
+   printf("enter a,b values ");
+   scanf("%d%d",&a,&b);
+   printf("before swap\n a=%d b=%d\n",a,b);
+   temp=a;
+   a=b;
+   b=temp;
+   printf("after swap\n a=%d b=%d\n",a,b);
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc swap.c
+[23bee037@mepcolinux ~]$./aou[K[K.out
+enter a,b values 2
+3
+before swap
+ a=2 b=3
+after swap
+ a=3 b=2
+[23bee037@mepcolinux ~]$exit
+exit
+
+Script done on Wednesday 11 October 2023 04:09:07 PM IST

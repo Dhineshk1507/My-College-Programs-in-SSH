@@ -1,0 +1,87 @@
+Script started on Wednesday 18 October 2023 03:57:16 PM IST
+[?1034h[23bee037@mepcolinux ~]$car[Kt odden[Kven.c
+#include<stdio.h>
+int main(){
+   int a;
+   printf("enter number");
+   scanf("%d",&a);
+   if(a%2==0){ printf("%d is even",a); }
+   else{ printf("%d is odd",a); }
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc oddeven.c
+[23bee037@mepcolinux ~]$./a.out
+enter number7
+7 is odd[23bee037@mepcolinux ~]$cat bigtre.c
+#include<stdio.h>
+int main(){
+   int a,b,c;
+   printf("enter three numbers");
+   scanf("%d%d%d",&a,&b,&c);
+   if(a>b){ if(a>c){ printf("%d is biggest",a); }
+            else{ printf("%d is biggest",c); }
+   }
+   else{ if(b>c){ printf("%d is biggest",b); }
+         else{ printf("%d is biggest",c); }
+   }
+}
+[23bee037@mepcolinux ~]$cc bigter[K[Kre.c
+[23bee037@mepcolinux ~]$./a.out
+enter three numbers5
+4
+6
+6 is biggest[23bee037@mepcolinux ~]$cat grade.c
+#include<stdio.h>
+int main(){
+   int sb1,sb2,sb3,sb4,sb5,sb6,avg;
+   printf("enter subject1 mark");
+   scanf("%d",&sb1);
+   printf("enter subject2 mark");
+   scanf("%d",&sb2);
+   printf("enter subject3 mark");
+   scanf("%d",&sb3);
+   printf("enter subject4 mark");
+   scanf("%d",&sb4);
+   printf("enter subject5 mark");
+   scanf("%d",&sb5);
+   printf("enter subject6 mark");
+   scanf("%d",&sb6);
+   avg=(sb1+sb2+sb3+sb4+sb5+sb6)/6;
+   printf("avg %d",avg);
+   if(avg>=85&&avg<=100){ printf("grade A"); }
+   else if(avg>=60&&avg<85){ printf("grade B"); }
+   else if(avg>=40&&avg<60){ printf("grade C"); }
+   else if(avg>=0&&avg<40){ printf("Fail"); }
+   else{ printf("ERROR"); }
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc grade.c
+[23bee037@mepcolinux ~]$./a.out
+enter subject1 mark50
+enter subject2 mark60
+enter subject3 mark70
+enter subject4 mark40
+enter subject5 mark50 5
+enter subject6 mark44
+avg 53grade C[23bee037@mepcolinux ~]$cat vowcon.c
+#include<stdio.h>
+int main(){
+   char vowcon;
+   printf("enter character");
+   scanf("%c",&vowcon);
+   switch(vowcon){
+      case 'a': printf("%c is vowel",vowcon); break;
+      case 'e': printf("%c is vowel",vowcon); break;
+      case 'i': printf("%c is vowel",vowcon); break;
+      case 'o': printf("%c is vowel",vowcon); break;
+      case 'u': printf("%c is vowel",vowcon); break;
+      default : printf("%c is consonant",vowcon);
+   }
+}
+[23bee037@mepcolinux ~]$cc vowcon.c
+[23bee037@mepcolinux ~]$./a.out
+enter charactera
+a is vowel[23bee037@mepcolinux ~]$exit
+exit
+
+Script done on Wednesday 18 October 2023 04:00:00 PM IST

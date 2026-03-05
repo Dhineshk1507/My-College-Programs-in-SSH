@@ -1,0 +1,70 @@
+Script started on Wednesday 08 November 2023 04:39:07 PM IST
+[?1034h[23bee037@mepcolinux ~]$add[K[K[Kcat adddc[K[Kcomp.v[Kc
+#include<stdio.h>
+void complx(int,int,int,int);
+void main(){
+   int x1,x2,y1,y2;
+   printf("enter real and imaginary part of c1");
+   scanf("%d%d",&x1,&y1);
+   printf("enter real and complex part of c2");
+   scanf("%d%d",&x2,&y2);
+   complx(x1,x2,y1,y2);
+}
+void complx(int a,int b,int c,int d){
+   int e,f;
+   e=a+b;
+   f=c+d;
+   printf("c1 + c2 = %d+%di",e,f);
+}
+[23bee037@mepcolinux ~]$cc addc[Kcp[Kompo[K.c
+[23bee037@mepcolinux ~]$,[K./a.oiy[K[Kut
+enter real and imaginary part of c12
+3
+enter real and complex part of c24
+5
+c1 + c2 = 6+8i[23bee037@mepcolinux ~]$cart[Kt[K[Kt fact.c
+#include<stdio.h>
+int fact(int);
+int main(){
+   int f,n;
+   printf("enter number");
+   scanf("%d",&n);
+   f=fact(n);
+   printf("factorial of %d is %d",n,f);
+}
+int fact(n){
+   int temp;
+   if(n==0){
+      return 1;
+   }
+   else{ temp=n*fact(n-1); }
+   return temp;
+}
+[23bee037@mepcolinux ~]$cc fact.c
+[23bee037@mepcolinux ~]$./aout[K[K[K[Ka.out
+enter number5
+factorial of 5 is 120[23bee037@mepcolinux ~]$cat swapf.c
+#include<stdio.h>
+void swap(int,int);
+void main(){
+   int a=10,b=20;
+   printf("before swap main a=%d,b=%d\n",a,b);
+   swap(a,b);
+   printf("after swap main a=%d,b=%d\n",a,b);
+}
+void swap(a,b){
+   int temp;
+   temp=a;
+   a=b;
+   b=temp;
+   printf("after swap function a=%d,b=%d\n",a,b);
+}
+[23bee037@mepcolinux ~]$cc swapf.c
+[23bee037@mepcolinux ~]$./aoi[K[K.out
+before swap main a=10,b=20
+after swap function a=20,b=10
+after swap main a=10,b=20
+[23bee037@mepcolinux ~]$w[Kexir[Kt
+exit
+
+Script done on Wednesday 08 November 2023 04:40:20 PM IST

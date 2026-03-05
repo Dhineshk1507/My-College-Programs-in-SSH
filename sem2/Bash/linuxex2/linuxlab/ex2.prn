@@ -1,0 +1,53 @@
+Script started on Friday 08 March 2024 03:47:29 PM IST
+[?1034h[23bee037@mepcolinux linuxlab]$cat dates.sh
+#!/bin/bash
+echo $(date)
+echo "hello $user"
+echo hostname $(hostname)
+echo Working In $(pwd)
+echo here is this month calendar
+cal
+[23bee037@mepcolinux linuxlab]$s h[K[Kh dates.sh
+Fri Mar 8 15:47:48 IST 2024
+hello 
+hostname mepcolinux.mepcoeng.ac.in
+Working In /run/media/root/Data/student/eee/ug/be2023/a/23bee037/sem2/linuxex2/linuxlab
+here is this month calendar
+     March 2024     
+Su Mo Tu We Th Fr Sa
+                1  2
+ 3  4  5  6  7 [7m 8[27m  9
+10 11 12 13 14 15 16
+17 18 19 20 21 22 23
+24 25 26 27 28 29 30
+31
+[23bee037@mepcolinux linuxlab]$sh s[Kdates.a[Ksh>>usres[K[K[K[K[Kdates.txt
+[23bee037@mepcolinux linuxlab]$x[Kcat usr[Kers.sh
+echo $(who -m)
+[23bee037@mepcolinux linuxlab]$sh users.sh
+23bee037 pts/107 2024-03-08 15:47
+[23bee037@mepcolinux linuxlab]$cat datre[K[Kes.a[Ks[Ktxt users.txt>>mergef[Kd.e[Ktxt
+cat: users.txt: No such file or directory
+[23bee037@mepcolinux linuxlab]$sh users[Ks.sh>>users.txt
+[23bee037@mepcolinux linuxlab]$cat dates.txt i[Kusers.txt>>merged [K.txt
+[23bee037@mepcolinux linuxlab]$cat merged.txt
+Fri Mar 8 15:48:09 IST 2024
+hello 
+hostname mepcolinux.mepcoeng.ac.in
+Working In /run/media/root/Data/student/eee/ug/be2023/a/23bee037/sem2/linuxex2/linuxlab
+here is this month calendar
+     March 2024     
+Su Mo Tu We Th Fr Sa
+                1  2
+ 3  4  5  6  7  8  9
+10 11 12 13 14 15 16
+17 18 19 20 21 22 23
+24 25 26 27 28 29 30
+31
+23bee037 pts/107 2024-03-08 15:47
+[23bee037@mepcolinux linuxlab]$rm dta[K[Kates.txt
+[23bee037@mepcolinux linuxlab]$rm usr[Kers.txt
+[23bee037@mepcolinux linuxlab]$exit
+exit
+
+Script done on Friday 08 March 2024 03:49:51 PM IST

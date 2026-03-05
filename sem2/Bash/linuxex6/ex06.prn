@@ -1,0 +1,146 @@
+Script started on Friday 03 May 2024 03:51:46 PM IST
+[?1034h[23bee037@mepcolinux linuxex6]$cat languages.sh
+#!/bin/bash
+echo -n "Enter the name of a country "
+read country
+echo -n "The official language of $country is "
+case $country in
+   Lithuania)
+      echo -n "Lithuanian"
+      ;;
+   Romania)
+      echo -n "Romanian"
+      ;;
+   Italy)
+      echo -n "Italian"
+      ;;
+   *)
+      echo -n "UNKNOWN"
+      ;;
+esac
+[23bee037@mepcolinux linuxex6]$sh languages.sh
+Enter the name of a country Romania
+The official language of Romania is Romanian[23bee037@mepcolinux linuxex6]$cat talk.sh
+#!/bin/bash
+echo "please talk to me..."
+while :
+   do
+      read INPUT_STRING
+      case $INPUT_STRING in
+	 hello)
+	    echo "Hello yourself!"
+	    ;;
+	 bye)
+	    echo "See you again!"
+	    break
+	    ;;
+	 *)
+	    echo "sorry, I dont understand"
+	    ;;
+      esac
+   done
+   echo "
+   Thats all folks!"
+[23bee037@mepcolinux linuxex6]$sh talk.sh
+please talk to me...
+hello
+Hello yourself!
+bye
+See you again!
+
+   Thats all folks!
+[23bee037@mepcolinux linuxex6]$cat arith.sh
+#!/bin/bash
+echo "enter two numbers"
+read a
+read b
+echo "enter choice"
+echo "1.Addition"
+echo "2.Subtraction"
+echo "3.Multiplication"
+echo "4.Division"
+read ch
+case $ch in
+   1) res=`echo $a + $b |bc`
+      ;;
+   2) res=`echo $a - $b |bc`
+      ;;
+   3) res=`echo $a \* $b |bc`
+      ;;
+   4) res=`echo $a / $b |bc`
+      ;;
+esac
+echo "Result : $res"
+[23bee037@mepcolinux linuxex6]$sh arith.sh
+enter two numbers
+2 2
+3
+enter choice
+1.Addition
+2.Subtraction
+3.Multiplication
+4.Division
+1
+Result : 5
+[23bee037@mepcolinux linuxex6]$sh arith.sh
+enter two numbers
+4
+2
+enter choice
+1.Addition
+2.Subtraction
+3.Multiplication
+4.Division
+3
+Result : 8
+[23bee037@mepcolinux linuxex6]$cat file.sh
+#!/bin/bash
+echo "Menu"
+echo "1.Lower to Upper"
+echo "2.Upper to Lower"
+echo "3.Quit"
+echo "Enter your choice : \c"
+read ch
+case "$ch" in
+   1) echo "Enter File : \c"
+      read f1
+      if [ -f$f1 ]
+      then
+	 echo "converting lower case to upper case"
+	 tr '[a-z]' '[A-Z]' < $f1
+      else
+	 echo "$f1 does not exist"
+      fi
+      ;;
+   2) echo "Enter the file : \c"
+      read f1
+      if [ -f$f1 ]
+      then
+	 echo "converting Upper to lower case to"
+	 tr '[A-Z]' '[a-z]' < $f1
+      else
+	 echo "$f1 file does not exist"
+      fi
+      ;;
+   3)
+      echo "Exit..."
+      exit
+      ;;
+esac
+[23bee037@mepcolinux linuxex6]$sh file.sh
+Menu
+1.Lower to Upper
+2.Upper to Lower
+3.Quit
+Enter your choice : \c
+1
+Enter File : \c
+h file1.txt
+converting lower case to upper case
+HELLO
+WELCOME
+THANK YOU
+[23bee037@mepcolinux linuxex6]$exit
+exit
+
+Script done on Friday 03 May 2024 03:54:43 PM IST

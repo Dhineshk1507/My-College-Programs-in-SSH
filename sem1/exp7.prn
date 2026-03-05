@@ -1,0 +1,73 @@
+Script started on Wednesday 20 December 2023 02:26:08 PM IST
+[?1034h[23bee037@mepcolinux ~]$cat swapp.c
+#include<stdio.h>
+int main(){
+   int x,y,*a,*b,temp;
+   printf("enter the value of x and y\n");
+   scanf("%d%d",&x,&y);
+   printf("before swap: x=%d, y=%d\n",x,y);
+   a=&x;
+   b=&y;
+   temp=*b;
+   *b=*a;
+   *a=temp;
+   printf("after swap: x=%d, y=%d",x,y);
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc swapp.c
+[23bee037@mepcolinux ~]$./a.out
+enter the value of x and y
+5
+6
+before swap: x=5, y=6
+after swap: x=6, y=5[23bee037@mepcolinux ~]$cat ptrnam.c
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+char sort(int,char**);
+int main(){
+   char *name[20];
+   int i,n;
+   printf("enter the no. of students");
+   scanf("%d",&n);
+   printf("enter name one by one");
+   for(i=0;i<n;i++){
+      name[i]=(char*)malloc(20*sizeof(char));
+      scanf("%s",name[i]);
+   }
+   sort(n,name);
+   printf("sorted name is");
+   for(i=0;i<n;i++){
+      printf("\n%s",name[i]);
+   }
+   return 0;
+}
+char sort(int n,char* name[]){
+   int i,j;
+   char t[20];
+   for(i=0;i<n-1;i++){
+      for(j=i+1;j<n;j++){
+	 if(strcmp(name[i],name[j])>0){
+	    strcpy(t,name[j]);
+	    strcpy(name[j],name[i]);
+	    strcpy(name[i],t);
+	 }
+      }
+   }
+   return (*name[i]);
+}
+[23bee037@mepcolinux ~]$cca[K ptrnam.c
+[23bee037@mepcolinux ~]$./a.o[Kout
+enter the no. of students4
+enter name one by oned
+gho
+d abs
+f vit
+sorted name is
+abs
+d
+gho
+vit[23bee037@mepcolinux ~]$eit[K[Kxit
+exit
+
+Script done on Wednesday 20 December 2023 02:30:38 PM IST

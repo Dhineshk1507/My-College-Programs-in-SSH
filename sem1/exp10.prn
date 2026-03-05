@@ -1,0 +1,60 @@
+Script started on Wednesday 27 December 2023 03:25:58 PM IST
+[?1034h[23bee037@mepcolinux ~]$car[Kt empfil.c
+#include<stdio.h>
+void main(){
+   FILE *fptr;
+   char name[20];
+   int age;
+   float salary;
+   fptr=fopen("emp.rec","w");
+   if(fptr==NULL){
+      printf("file does not exists \n");
+      return;
+   }
+   printf("enter the name");
+   scanf("%s",name);
+   fprintf(fptr,"name=%s\n",name);
+   printf("enter the age");
+   scanf("%d",&age);
+   fprintf(fptr,"age=%d\n",age);
+   printf("enter the salary");
+   scanf("%f",&salary);
+   fprintf(fptr,"salary=%.2f\n",salary);
+   fclose(fptr);
+}
+[23bee037@mepcolinux ~]$cc empfil.c
+[23bee037@mepcolinux ~]$./a.out
+enter the namedhinesh
+enter the age17
+enter the salary200
+[23bee037@mepcolinux ~]$cat fiol[K[Klstror[K[K[Kor.c
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+   FILE *fptr;
+   char filename[100];
+   char ch;
+   printf("enter the filename to be opened\n");
+   scanf("%s",filename);
+   fptr=fopen("emp.rec","r");
+   if(fptr==NULL){
+      printf("cannot open file\n");
+   }
+   ch=fgetc(fptr);
+   while(ch!=EOF){
+      printf("%c",ch);
+      ch=fgetc(fptr);
+   }
+   fclose(fptr);
+}
+[23bee037@mepcolinux ~]$cc filstor.c
+[23bee037@mepcolinux ~]$./a.out
+enter the filename to be opened
+ex mop  p.rec
+name=dhinesh
+age=17
+salary=200.00
+[23bee037@mepcolinux ~]$exit
+exit
+
+Script done on Wednesday 27 December 2023 03:26:59 PM IST

@@ -1,0 +1,96 @@
+Script started on Friday 05 April 2024 03:54:55 PM IST
+[?1034h[23bee037@mepcolinux linuxex4]$cat df[K[Kfact.sh
+#!/bin/bash
+echo 'enter a number'
+read num
+n=$num
+fact=1
+while [ $num -ge 1 ]
+do
+   fact=$(($fact*$num))
+   num=$(($num-1))
+done
+echo "factorial of $n is $fact"
+[23bee037@mepcolinux linuxex4]$sh fact.sh
+enter a number
+3
+factorial of 3 is 6
+[23bee037@mepcolinux linuxex4]$cat fibo.sh
+#!/bin/sh
+echo "how many number of terms to be generated?: "
+read n
+x=0
+y=1
+i=2
+echo "fibonacci series upto $n terms: "
+echo "$x"
+echo "$y"
+while [ $i -lt $n ]
+do
+   i=$(($i+1))
+   z=$(($x+$y))
+   echo "$z"
+   x=$y
+   y=$z
+done
+[23bee037@mepcolinux linuxex4]$sh fibo.sh
+how many number of terms to be generated?: 
+2
+fibonacci series upto 2 terms: 
+0
+1
+[23bee037@mepcolinux linuxex4]$cat leap.sh
+#!/bin/sh
+echo "Enter the year"
+read year
+if [ $year -ge 1000 -a $year -le 9999 ];
+then
+   if [ $(($year %4)) -eq 0 ]
+   then
+      echo "the year $year is a leap year"
+   else
+      echo "the year $year is not a leap year"
+   fi
+fi
+[23bee037@mepcolinux linuxex4]$sh leap.sh
+Enter the year
+10  200 20
+the year 2020 is a leap year
+[23bee037@mepcolinux linuxex4]$cat cw.sh
+echo "enter the radius of circle:"
+read radius
+pi=3.14159
+area=$(echo "$pi*($radius^2)"|bc)
+circum=$(echo "(2*$pi*$radius)"|bc)
+echo "area of a circle is $area"
+echo "circumference of a circle is :$circum"
+[23bee037@mepcolinux linuxex4]$sh cw.sh
+enter the radius of circle:
+4
+area of a circle is 50.26544
+circumference of a circle is :25.13272
+[23bee037@mepcolinux linuxex4]$cat sum.sh
+echo "enter the size(N):"
+read N
+i=1
+sum=0
+echo "enter the N numbers: "
+while [ $i -le $N ]
+do
+   read num
+   sum=$((sum+num))
+   i=$((i+1))
+done
+echo "sum of n numbers is : $sum"
+[23bee037@mepcolinux linuxex4]$sh sum.sh
+enter the size(N):
+3
+enter the N numbers: 
+1
+2
+3
+sum of n numbers is : 6
+[23bee037@mepcolinux linuxex4]$exit
+exit
+
+Script done on Friday 05 April 2024 03:56:38 PM IST

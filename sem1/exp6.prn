@@ -1,0 +1,110 @@
+Script started on Wednesday 06 December 2023 03:00:18 PM IST
+[?1034h[23bee037@mepcolinux ~]$catr[K stra.c
+#include<stdio.h>
+int main(){
+   char a[50],b[50];
+   int i,j=0,l=0,flag=0,c;
+   printf("enter string");
+   scanf("%s",a);
+   printf("enter choice");
+   scanf("%d",&c);
+   switch(c){
+      case 1:
+	 for(i=0;a[i]!='\0';i++){
+	    l++;
+	 }
+	 printf("length %d",l);
+	 break;
+      case 2:
+	 for(i=0;a[i]!='\0';i++){
+	    l++;
+	 }
+	 for(i=0;i<l;i++){
+	    b[i]=a[i];
+	 }
+	 printf("original string %s",a);
+	 printf("copied string %s",b);
+	 break;
+      case 3:
+	 printf("the reversed string ");
+	 for(i=0;a[i]!='\0';i++){
+	    l++;
+	 }
+	 for(i=l;i>=0;i--){
+	    printf("%c",a[i]);
+	 }
+	 break;
+      case 4:
+	 for(i=0;a[i]!='\0';i++){
+	    l++;
+	 }
+	 for(i=0;i<l;i++){
+	    if(a[j]!=a[l-i-1]){
+	       flag=1;
+	    }
+	    j++;
+	 }
+	 if(flag==0){
+	    printf("palindrome");
+	 }
+	 else{
+	    printf("not palindrome");
+	 }
+	 break;
+      default:
+	 printf("invalid choice");
+	 break;
+   }
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc stra.c
+[23bee037@mepcolinux ~]$./a.out
+enter stringdhinesh
+enter choice2
+original string dhineshcopied string dhinesh[23bee037@mepcolinux ~]$cat strb.b[Kc
+#include<stdio.h>
+#include<string.h>
+int main(){
+   int l,c;
+   char a[50],b[50];
+   printf("enter string");
+   scanf("%s",a);
+   printf("enter choice");
+   scanf("%d",&c);
+   switch(c){
+      case 1:
+	 l=strlen(a);
+	 printf("length %d",l);
+	 break;
+      case 2:
+	 strcpy(b,a);
+	 printf("original %s\n",a);
+	 printf("copied %s",b);
+	 break;
+      case 3:
+	 printf("enter string 2");
+	 scanf("%s",b);
+	 strcat(a,b);
+	 printf("concated :%s",a);
+	 break;
+      case 4:
+	 printf("enter string 2");
+	 scanf("%s",b);
+	 if(strcmp(a,b)==0){ printf("strings are equal"); }
+	 else{ printf("string are not equal"); }
+	 break;
+      default:
+	 printf("enter valid choice");
+	 break;
+   }
+   return 0;
+}
+[23bee037@mepcolinux ~]$cc strb.c
+[23bee037@mepcolinux ~]$./a.out
+enter stringdhinesh
+enter choice3
+enter string 2k
+concated :dhineshk[23bee037@mepcolinux ~]$exit
+exit
+
+Script done on Wednesday 06 December 2023 03:01:38 PM IST
