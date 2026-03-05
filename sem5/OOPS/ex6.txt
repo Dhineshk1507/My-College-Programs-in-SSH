@@ -1,0 +1,58 @@
+Script started on Fri 12 Sep 2025 02:23:58 PM IST
+[?1034h[23bee037@mepcolinux ~]$cat ex^[K6_2.cpp
+#include <iostream>
+
+using namespace std;
+
+class str
+{
+   string data,ans;
+
+   public:
+   str(string s)
+   {
+      data = s;
+   }
+
+   void operator-(char c)
+   {
+      ans="";
+      for (int i=0; data[i]!='\0';i++)
+      {
+	 if(data[i]!=c)
+	 {
+	  ans+=data[i];
+	 }
+      }
+   }
+   void display()
+   {
+	 cout<<"Original String:"<<data<<endl;
+	 cout<<"After subtracting the character:"<<ans<<endl;
+   }
+};
+
+int main()
+{
+   char ch;
+   str s("hello");
+   cout<<"Enter a character to remove:"<<endl;
+   cin>>ch;
+   s-ch;
+   s.display();
+   return 0;
+}
+
+	 
+
+
+
+[23bee037@mepcolinux ~]$c++ ex6_2.cpp
+[23bee037@mepcolinux ~]$./.[Ka.out
+Enter a character to remove:
+aa 
+Original String:hello
+After subtracting the character:hello
+[23bee037@mepcolinux ~]$exit
+
+Script done on Fri 12 Sep 2025 02:24:29 PM IST

@@ -1,0 +1,46 @@
+Script started on Mon 08 Sep 2025 12:06:12 PM IST
+[?1034h[23bee037@mepcolinux Ex6]$cat Ex6_2.cpp
+#include<iostream>
+#include<cstring>
+using namespace std;
+class STR{
+	char *Arr;
+	public:
+	STR(char *temp){
+		Arr=new char(strlen(temp));
+		strcpy(Arr,temp);
+	}
+	STR operator-(char Reduce){
+		int i;
+		STR temp(Arr);
+		for(i=0;Arr[i]!=0;i++){
+			if(temp.Arr[i]==Reduce){
+				temp.Arr[i]=' ';
+			}
+		}
+		return temp;
+	}
+	void Display(){
+		cout<<Arr<<endl;
+	}
+	~STR(){ delete[] Arr; }
+};
+int main(){
+	STR A1("dovahkiin");
+	A1.Display();
+	STR A2=A1-'i';
+	A2.Display();
+	return 0;
+}
+[23bee037@mepcolinux Ex6]$c++ Ex6_2.cpp
+[01m[KEx6_2.cpp:[m[K In function ‘[01m[Kint main()[m[K’:
+[01m[KEx6_2.cpp:27:20:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+  STR A1("dovahkiin");
+[01;32m[K                    ^[m[K
+[23bee037@mepcolinux Ex6]$./.[Ka.out
+dovahkiin
+dovahk  n
+[23bee037@mepcolinux Ex6]$exit
+exit
+
+Script done on Mon 08 Sep 2025 12:06:33 PM IST

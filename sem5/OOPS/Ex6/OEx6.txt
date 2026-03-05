@@ -1,0 +1,132 @@
+Script started on Thu 28 Aug 2025 02:48:48 PM IST
+[?1034h[23bee037@mepcolinux Ex6]$cat Ex6_1.txt
+cat: Ex6_1.txt: No such file or directory
+[23bee037@mepcolinux Ex6]$cat Ex6_1.txt[K[K[Kcpp
+#include<iostream>
+using namespace std;
+class Time{
+   int Hr,Min,Sec;
+   public:
+   Time(int h,int m,int s){
+	   Hr=h;
+	   Min=m;
+	   Sec=s;
+	   Min+=Sec/60;
+	   Sec=Sec%60;
+	   Hr+=Min/60;
+	   Min=Min%60;
+   }
+   Time operator++(){
+	   Time temp(0,0,0);
+	   temp.Hr=++Hr;
+	   temp.Min=++Min;
+	   temp.Sec=++Sec;
+	   return temp;
+   }
+   Time operator++(int){
+	   Time temp(0,0,0);
+	   temp.Hr=Hr++;
+	   temp.Min=Min++;
+	   temp.Sec=Sec++;
+	   return temp;
+   }
+   Time operator--(){
+	   Time temp(0,0,0);
+	   temp.Hr=--Hr;
+	   temp.Min=--Min;
+	   temp.Sec=--Sec;
+	   return temp;
+   }
+   Time operator--(int){
+	   Time temp(0,0,0);
+	   temp.Hr=Hr--;
+	   temp.Min=Min--;
+	   temp.Sec=Sec--;
+	   return temp;
+   }
+   void Display(){
+	   cout<<Hr<<":"<<Min<<":"<<Sec<<endl;
+   }
+};
+int main(){
+	Time T1(12,61,61);
+	cout<<"Original Time: "<<endl;
+	T1.Display();
+	cout<<"Pre Increment: "<<endl;
+	Time T2=++T1;
+	T1.Display();
+	T2.Display();
+	cout<<"Pre Decrement: "<<endl;
+	Time T3=--T1;
+	T1.Display();
+	T3.Display();
+	cout<<"Post Increment: "<<endl;
+	Time T4=T1++;
+	T1.Display();
+	T4.Display();
+	cout<<"Post Decrement: "<<endl;
+	Time T5=T1--;
+	T1.Display();
+	T5.Display();
+	return 0;
+}
+[23bee037@mepcolinux Ex6]$c++ Ex6_1.cppp[K
+[23bee037@mepcolinux Ex6]$.a/[K[K/a.out
+Original Time: 
+13:2:1
+Pre Increment: 
+14:3:2
+14:3:2
+Pre Decrement: 
+13:2:1
+13:2:1
+Post Increment: 
+14:3:2
+13:2:1
+Post Decrement: 
+13:2:1
+14:3:2
+[23bee037@mepcolinux Ex6]$cat Ex6_2.cpp
+#include<iostream>
+#include<cstring>
+using namespace std;
+class STR{
+	char *Arr;
+	public:
+	STR(char *temp){
+		Arr=new char(strlen(temp));
+		strcpy(Arr,temp);
+	}
+	STR operator-(char Reduce){
+		int i;
+		STR temp(Arr);
+		for(i=0;Arr[i]!=0;i++){
+			if(temp.Arr[i]==Reduce){
+				temp.Arr[i]=' ';
+			}
+		}
+		return temp;
+	}
+	void Display(){
+		cout<<Arr<<endl;
+	}
+	~STR(){ delete[] Arr; }
+};
+int main(){
+	STR A1("dovahkiin");
+	A1.Display();
+	STR A2=A1-'i';
+	A2.Display();
+	return 0;
+}
+[23bee037@mepcolinux Ex6]$c++ Ex6_2.cpp
+[01m[KEx6_2.cpp:[m[K In function ‘[01m[Kint main()[m[K’:
+[01m[KEx6_2.cpp:27:20:[m[K [01;35m[Kwarning: [m[Kdeprecated conversion from string constant to ‘[01m[Kchar*[m[K’ [-Wwrite-strings]
+  STR A1("dovahkiin");
+[01;32m[K                    ^[m[K
+[23bee037@mepcolinux Ex6]$./a.out
+dovahkiin
+dovahk  n
+[23bee037@mepcolinux Ex6]$exit
+
+Script done on Thu 28 Aug 2025 02:49:23 PM IST

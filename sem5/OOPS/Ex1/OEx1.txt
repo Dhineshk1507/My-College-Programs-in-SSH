@@ -1,0 +1,108 @@
+Script started on Fri 18 Jul 2025 03:45:57 PM IST
+[?1034h[23bee037@mepcolinux Ex1]$cat Ex1_1.cpp
+#include<iostream>
+using namespace std;
+class Car{
+   private:
+      string Brand;
+      string Model;
+      int Year;
+      int Price;
+   public:
+      Car(){
+	 cout<<"Enter Brand: ";
+	 cin>>Brand;
+	 cout<<"Enter Model: ";
+	 cin>>Model;
+	 cout<<"Enter Year: ";
+	 cin>>Year;
+	 cout<<"Enter Price: ";
+	 cin>>Price;
+      }
+      void Display(){
+	 cout<<"Brand: "<<Brand<<endl;
+	 cout<<"Model: "<<Model<<endl;
+	 cout<<"Year: "<<Year<<endl;
+	 cout<<"Price: "<<Price<<endl;
+      }
+      ~Car(){ cout<<"Destructor"<<endl; }
+};
+int main(){
+   Car c1,c2;
+   c1.Display();
+   c2.Display();
+   return 0;
+}
+[23bee037@mepcolinux Ex1]$
+[23bee037@mepcolinux Ex1]$c++  [KEx1_1.cpp
+[23bee037@mepcolinux Ex1]$.a[K/a.out
+Enter Brand: Tesla
+Enter Model: 22s
+Enter Year: 2020
+Enter Price: 100000
+Enter Brand: Aui = di
+Enter Model: 233d
+Enter Year: 2024
+Enter Price: 200000
+Brand: Tesla
+Model: 22s
+Year: 2020
+Price: 100000
+Brand: Audi
+Model: 233d
+Year: 2024
+Price: 200000
+Destructor
+Destructor
+[23bee037@mepcolinux Ex1]$cat Ex1_2.t[Kcpp
+#include<iostream>
+using namespace std;
+class Books{
+   private:
+      string Title;
+      int AccessNo;
+      int Price;
+      int Copies;
+   public:
+      Books(){
+	 Title="";
+	 AccessNo=0;
+	 Price=0;
+	 Copies=0;
+      }
+      void IncBooks(){
+	 cout<<"Enter Title: ";
+	 cin>>Title;
+	 cout<<"Enter AccessNo: ";
+	 cin>>AccessNo;
+	 cout<<"Enter Price: ";
+	 cin>>Price;
+	 cout<<"Enter Copies: ";
+	 cin>>Copies;
+      }
+      int GetPrice(){
+	 return (Price*Copies);
+      }
+};
+int main(){
+   Books b1,b2;
+   b1.IncBooks();
+   b2.IncBooks();
+   cout<<"Total Worth: "<<(b1.GetPrice()+b2.GetPrice())<<endl;
+   return 0;
+}
+[23bee037@mepcolinux Ex1]$c+[K++ Ex1_2.cpp
+[23bee037@mepcolinux Ex1]$.a/[K/[K[K/a.out
+Enter Title: Ac lchemist
+Enter AccessNo: 202
+Enter Price: 1000
+Enter Copies: 5
+Enter Title: H VioletEvergarden
+Enter AccessNo: 400
+Enter Price: 3000
+Enter Copies: 6
+Total Worth: 23000
+[23bee037@mepcolinux Ex1]$exit
+exit
+
+Script done on Fri 18 Jul 2025 03:48:13 PM IST

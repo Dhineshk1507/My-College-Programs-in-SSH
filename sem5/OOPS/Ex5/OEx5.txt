@@ -1,0 +1,96 @@
+Script started on Wed 13 Aug 2025 12:55:16 PM IST
+[?1034h[23bee037@mepcolinux ~]$cat Ex%[K5_1.cpp
+#include<iostream>
+using namespace std;
+class Num{
+    int feet,inches;
+    public:
+    void GetData(){
+        cout<<"Enter feet: ";
+        cin>>feet;
+        cout<<"Enter inches: ";
+        cin>>inches;
+        feet=feet+inches/12;
+        inches=inches%12;
+    }
+    void Display(){
+        cout<<feet<<"\'"<<inches<<"\""<<endl;
+    }
+    friend Num add(Num,Num);
+};
+Num add(Num A,Num B){
+    Num temp;
+    temp.feet=A.feet+B.feet;
+    temp.inches=A.inches+B.inches;
+    temp.feet=temp.feet+(temp.inches/12);
+    temp.inches=temp.inches%12;
+    return temp;
+}
+int main(){
+    Num Ob1,Ob2;
+    Ob1.GetData();
+    Ob2.GetData();
+    cout<<"DATA 1: ";
+    Ob1.Display();
+    cout<<"DATA 2: ";
+    Ob2.Display();
+    Num Result=add(Ob1,Ob2);
+    cout<<"addition of 2 data: ";
+    Result.Display();
+    return 0;
+}
+[23bee037@mepcolinux ~]$c+++[K Ex5_1.cpp
+[23bee037@mepcolinux ~]$./a.out
+Enter feet: 30
+Enter inches: 13
+Enter feet: 20
+Enter inches: 6
+DATA 1: 31'1"
+DATA 2: 20'6"
+addition of 2 data: 51'7"
+[23bee037@mepcolinux ~]$cat Ex5_2.cpp
+#include<iostream>
+using namespace std;
+class NumB;
+class NumA{
+    int num1;
+    friend class NumB;
+    public:
+    void GetData(){
+        cout<<"Enter number: ";
+        cin>>num1;
+    }
+};
+class NumB{
+    int num2;
+    public:
+    void GetData(){
+        cout<<"Enter number: ";
+        cin>>num2;
+    }
+    void Average(NumA tempA){
+        cout<<"Average: "<<(num2+tempA.num1)/2<<endl;
+    }
+    void Max(NumA tempA){
+        if(num2>tempA.num1) cout<<"Max: "<<num2<<endl;
+        else cout<<"Max: "<<tempA.num1<<endl;
+    }
+};
+int main(){
+    NumA A1;
+    A1.GetData();
+    NumB B1;
+    B1.GetData();
+    B1.Max(A1);
+    B1.Average(A1);
+    return 0;
+}
+[23bee037@mepcolinux ~]$c++ Ex5_2.cpp
+[23bee037@mepcolinux ~]$./a.out
+Enter number: 5
+Enter number: 10
+Max: 10
+Average: 7
+[23bee037@mepcolinux ~]$exit
+
+Script done on Wed 13 Aug 2025 12:56:16 PM IST

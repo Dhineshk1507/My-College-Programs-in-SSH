@@ -1,0 +1,206 @@
+Script started on Thu 11 Sep 2025 01:16:28 PM IST
+[?1034h[23bee037@mepcolinux Ex8]$cat Ex8_1.cpp
+#include<iostream>
+using namespace std;
+class Dcmotor
+{
+   public:
+      float E,Ra,Ia;
+};
+class shunt:public Dcmotor
+{
+   public:
+      float Rsh;
+      shunt(float e,float r,float i,float rs)
+      {
+         E=e;
+         Ra=r;
+         Ia=i;
+         Rsh=rs;
+      }
+      void display()
+      {
+         float V=E+(Ia*Ra);
+         float Ish=V/Rsh;
+         float I=Ia+Ish;
+         cout<<"current in shunt motor:"<<I<<endl;
+         cout<<"voltage in shunt motor:"<<V<<endl;
+      }
+};
+class series:public Dcmotor
+{
+   public:
+      float Rse;
+      series(float e,float r,float i,float re)
+      {
+         E=e;
+         Ra=r;
+         Ia=i;
+         Rse=re;
+      }
+      void display()
+      {
+         float I=Ia;
+         float V=E+I*(Ra+Rse);
+         cout<<"current in series motor:"<<I<<endl;
+         cout<<"voltage in series motor:"<<V<<endl;
+      }
+};
+class compound:public Dcmotor
+{
+   public:
+      float Rsh,Rse,Ish;
+      compound(float e,float r,float i,float re, float is)
+      {
+         E=e;
+         Ra=r;                    
+         Ia=i;
+         Rse=re;
+         Ish=is;
+      }
+      void display()
+      {
+         float I=Ia+Ish;
+         float V=E+(Ia*Ra)+(I*Rse);
+         cout<<"current in compound motor:"<<I<<endl;
+         cout<<"voltage in compound motor:"<<V<<endl;
+      }
+};
+int main()
+{
+   shunt x(216.4,1.2,2.067,75);
+   series y(184,1.2,5,6);
+   compound z(186.4,1.2,2.067,6,2.93);
+   x.display();
+   y.display();
+   z.display();
+   return 0;
+}
+[23bee037@mepcolinux Ex8]$c++ Ex8[K*[K9[K8_1.cpp
+[23bee037@mepcolinux Ex8]$./.aout[K[K[K[K[Ka.out
+current in shunt motor:4.9854
+voltage in shunt motor:218.88
+current in series motor:5
+voltage in series motor:220
+current in compound motor:4.997
+voltage in compound motor:218.862
+[23bee037@mepcolinux Ex8]$cat Ex*_2[K[K[K[Kx*[K8_@[K2.c[Kcpp
+#include<iostream>
+using namespace std;
+class Base{
+   protected:
+      int BaseNum;
+   public:
+      virtual void GetData(){
+	 cout<<"Enter Num: ";
+	 cin>>BaseNum;
+      }
+      virtual void Display(){
+	 cout<<"Base class: "<<BaseNum<<endl;
+      }
+};
+class Der1:public Base{
+   protected:
+      int D1Num;
+   public:
+      void GetData(){
+	 cout<<"Enter Num: ";
+	 cin>>D1Num;
+      }
+      void Display(){
+	 cout<<"Derived class 1: "<<D1Num<<endl;
+      }
+};
+class Der2:public Der1{
+   protected:
+      int D2Num;
+   public:
+      void GetData(){
+	 cout<<"Enter Num: ";
+	 cin>>D2Num;
+      }
+      void Display(){
+	 cout<<"Derived class 2: "<<D2Num<<endl;
+      }
+};
+class Der3:public Der2{
+   protected:
+      int D3Num;
+   public:
+      void GetData(){
+	 cout<<"Enter Num: ";
+	 cin>>D3Num;
+      }
+      void Display(){
+	 cout<<"Derived class 3: "<<D3Num<<endl;
+      }
+};
+class Der4:public Der3{
+   protected:
+      int D4Num;
+   public:
+      void GetData(){
+	 cout<<"Enter Num: ";
+	 cin>>D4Num;
+      }
+      void Display(){
+	 cout<<"Derived class 4: "<<D4Num<<endl;
+      }
+};
+class Der5:public Der4{
+   protected:
+      int D5Num;
+   public:
+      void GetData(){
+	 cout<<"Enter Num: ";
+	 cin>>D5Num;
+      }
+      void Display(){
+	 cout<<"Derived class 5: "<<D5Num<<endl;
+      }
+};
+int main(){
+   Base *p;
+   Base b1;
+   p=&b1;
+   p->GetData();
+   p->Display();
+   Der1 d1;
+   p=&d1;
+   p->GetData();
+   p->Display();
+   Der2 d2;
+   p=&d2;
+   p->GetData();
+   p->Display();
+   Der3 d3;
+   p=&d3;
+   p->GetData();
+   p->Display();
+   Der4 d4;
+   p=&d4;
+   p->GetData();
+   p->Display();
+   Der5 d5;
+   p=&d5;
+   p->GetData();
+   p->Display();
+   return 0;
+}
+[23bee037@mepcolinux Ex8]$c++ Ex8_2.cpp
+[23bee037@mepcolinux Ex8]$./a.out
+Enter Num: 10
+Base class: 10
+Enter Num: 20
+Derived class 1: 20
+Enter Num: 30
+Derived class 2: 30
+Enter Num: 40
+Derived class 3: 40
+Enter Num: 50
+Derived class 4: 50
+Enter Num: 60
+Derived class 5: 60
+[23bee037@mepcolinux Ex8]$exit
+
+Script done on Thu 11 Sep 2025 01:17:42 PM IST

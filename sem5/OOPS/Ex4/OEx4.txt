@@ -1,0 +1,97 @@
+Script started on Sat 30 Aug 2025 03:11:42 PM IST
+[?1034h[23bee037@mepcolinux Ex4]$cat Ex4_1.cpp
+#include<iostream>
+using namespace std;
+class Calc{
+   float V;
+   public:
+   Calc(float Volt){
+      V=Volt;
+   }
+   void Current(float R1){
+      cout<<"current across "<<R1<<": "<<V/R1<<endl;
+   }
+   void Current(float R1,float R2){
+      cout<<"current across "<<R1<<": "<<V/R1<<endl;
+      cout<<"current across "<<R2<<": "<<V/R2<<endl;
+   }
+   void Current(float R1,float R2,float R3){
+      cout<<"current across "<<R1<<": "<<V/R1<<endl;
+      cout<<"current across "<<R2<<": "<<V/R2<<endl;
+      cout<<"current across "<<R3<<": "<<V/R3<<endl;
+   }
+};
+int main(){
+   Calc P1(100);
+   float R1,R2,R3;
+   cout<<"Enter R1,R2,R3 values: ";
+   cin>>R1>>R2>>R3;
+   cout<<"For circuit with R1: "<<endl;
+   P1.Current(R1);
+   cout<<"For circuit with R1 and R2: "<<endl;
+   P1.Current(R1,R2);
+   cout<<"For circuit with R1 and R2 and R3: "<<endl;
+   P1.Current(R1,R2,R3);
+   return 0;
+}
+[23bee037@mepcolinux Ex4]$c++ Ex4_1.c[[[K[Kpp
+[23bee037@mepcolinux Ex4]$./.ao[K[K[K[K/a.out
+Enter R1,R2,R3 values: 10
+20
+30
+For circuit with R1: 
+current across 10: 10
+For circuit with R1 and R2: 
+current across 10: 10
+current across 20: 5
+For circuit with R1 and R2 and R3: 
+current across 10: 10
+current across 20: 5
+current across 30: 3.33333
+[23bee037@mepcolinux Ex4]$cat Ex4_2.cpp
+#include<iostream>
+using namespace std;
+class emf
+{
+   public:
+      void motor(int a=220,int rsh=75)
+      {
+	 float ra=1.2;
+	 float il=4;
+	 float ish=(a/rsh);
+	 float ia=il-ish;
+	 float Eb=a-(ia*ra);
+	 cout<<"the Eb for shunt motor is:"<<Eb<<endl;
+      }
+      void motor(float ra,int a,int rse)
+      {
+	 int rsh=75;
+	 float ia=3;
+	 float Eb=a-(ia*(ra+rse));
+	 cout<<"the Eb for series motor is:"<<Eb<<endl;
+      }
+      void motor(int a,float ra,int rse,int rsh)
+      {
+	 float il=4;
+	 float ish=(a/rsh);
+	 float ia=(il-ish);
+	 float Eb=a-(ia*(ra+rse));
+	 cout<<"the Eb for compound shunt motor is:"<<Eb<<endl;
+      }
+};
+int main()
+{
+   emf e1;
+   e1.motor();
+   e1.motor(1.2,220,6);
+   e1.motor(220,1.2,6,75);
+   return 0;
+}
+[23bee037@mepcolinux Ex4]$c++ Ex4_2.cpp
+[23bee037@mepcolinux Ex4]$./a.out
+the Eb for shunt motor is:217.6
+the Eb for series motor is:198.4
+the Eb for compound shunt motor is:205.6
+[23bee037@mepcolinux Ex4]$exit
+
+Script done on Sat 30 Aug 2025 03:12:36 PM IST

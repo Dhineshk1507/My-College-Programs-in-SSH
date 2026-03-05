@@ -1,0 +1,209 @@
+Script started on Wed 10 Sep 2025 03:26:35 PM IST
+[?1034h[23bee035@mepcolinux ~]$cat ex8.cpp
+#include<iostream>
+using namespace std;
+class dcmotor
+{
+   public:
+      float E,Ra,Ia;
+};
+class shunt:public dcmotor
+{
+   public:
+      float Rsh;
+      shunt(float e,float r,float i,float rs)
+      {
+	 E=e;
+	 Ra=r;
+	 Ia=i;
+	 Rsh=rs;
+      }
+      void display()
+      {
+	 float V=E+(Ia*Ra);
+         float Ish=V/Rsh;
+         float I=Ia+Ish;
+         cout<<"current in shunt motor:"<<I<<endl;
+         cout<<"voltage in shunt motor:"<<V<<endl;
+      }
+};
+class series:public dcmotor
+{
+   public:
+      float Rse;
+      series(float e,float r,float i,float re)
+      {
+	 E=e;
+	 Ra=r;
+	 Ia=i;
+	 Rse=re;
+      }
+      void display()
+      {
+	 float I=Ia;
+	 float V=E+I*(Ra+Rse);
+	 cout<<"current in series motor:"<<I<<endl;
+	 cout<<"voltage in series motor:"<<V<<endl;
+      }
+};
+class compound:public dcmotor
+{
+   public:
+      float Rsh,Rse,Ish;
+      compound(float e,float r,float i,float re, float is)
+      {
+	 E=e;
+         Ra=r;		          
+	 Ia=i;
+	 Rse=re;
+	 Ish=is;
+      }
+      void display()
+      {
+	 float I=Ia+Ish;
+         float V=E+(Ia*Ra)+(I*Rse);
+         cout<<"current in compound motor:"<<I<<endl;
+         cout<<"voltage in compound motor:"<<V<<endl;
+      }
+};
+int main()
+{
+   shunt x(216.4,1.2,2.067,75);
+   series y(184,1.2,5,6);
+   compound z(186.4,1.2,2.067,6,2.93);
+   x.display();
+   y.display();
+   z.display();
+   return 0;
+}
+[23bee035@mepcolinux ~]$cat ex8.cpp[1P[1P[1P ex8.cppc ex8.cpp+ ex8.cpp+ ex8.cpp
+[23bee035@mepcolinux ~]$./a.out
+current in shunt motor:4.9854
+voltage in shunt motor:218.88
+current in series motor:5
+voltage in series motor:220
+current in compound motor:4.997
+voltage in compound motor:218.862
+[23bee035@mepcolinux ~]$cat ex8ii.cpp
+#include<iostream>
+using namespace std;
+class add
+{
+   protected:
+      int a,b;
+      public:
+      virtual void getvalue()
+      {
+	 cout<<"enter 2 valuse:";
+	 cin>>a>>b;
+      }
+      virtual void display()
+      {
+         int x=a+b;
+         cout<<"sum:"<<x;
+      }
+};
+class sub:public add
+{
+   protected:
+      int c,d;
+      public:
+      void getvalue()
+      {
+         cout<<"\nenter 2 values:";
+         cin>>c>>d;
+      }
+      void display()
+      {
+         int y=c-d;
+         cout<<"difference:"<<y;
+      }
+};
+class mul:public add
+{
+   protected:
+      int e,f;
+      public:
+      void getvalue()
+      {
+	 cout<<"\nenter 2 values:";
+         cin>>e>>f;
+      }
+      void display()
+      {
+	 int z=e*f;
+         cout<<"mutipliction:"<<z;
+      }
+};
+class div:public add
+{
+   protected:
+      int g,h;
+      public:
+      void getvalue()
+      {
+	 cout<<"\nenter 2 value:";
+	 cin>>g>>h;
+      }
+      void display()
+      {
+         int l=g/h;
+         cout<<"division:"<<l;
+      }
+};
+class mod:public add
+{
+   protected:
+      int i,j;
+      public:
+      void getvalue()
+      {
+         cout<<"\nenter 2 values:";
+         cin>>i>>j;
+      }
+      void display()
+      {
+         int k=i%j;
+         cout<<"remainder:"<<k<<endl;
+      }
+};
+int main()
+{
+   add *p;
+   add A;
+   p=&A;
+   p -> getvalue();
+   p -> display();
+   sub S;
+   p=&S;
+   p -> getvalue();
+   p -> display();
+   mul M;
+   p=&M;
+   p -> getvalue();
+   p -> display();
+   div D;
+   p=&D;
+   p -> getvalue();
+   p -> display();
+   mod O;
+   p=&O;
+   p -> getvalue();
+   p -> display();
+   return 0;
+}
+[23bee035@mepcolinux ~]$cat ex8ii.cpp[1P[1P[1P ex8ii.cppc ex8ii.cpp+ ex8ii.cpp+ ex8ii.cpp
+[23bee035@mepcolinux ~]$./a.out
+enter 2 valuse:45 35
+sum:80
+enter 2 values:45 35
+difference:10
+enter 2 values:45  85 45  55
+mutipliction:4675
+enter 2 value:35 15
+division:2
+enter 2 values:85 65
+remainder:20
+[23bee035@mepcolinux ~]$exit
+
+Script done on Wed 10 Sep 2025 03:29:06 PM IST

@@ -1,0 +1,142 @@
+Script started on Tue 05 Aug 2025 10:41:23 AM IST
+[?1034h[23bee037@mepcolinux Ex3]$cat Ex3_2[K1.cpp
+#include<iostream>
+using namespace std;
+class Student{
+   int Reg,Code;
+   public:
+   Student(int R,int C){
+      Reg=R;
+      Code=C;
+   }
+   Student(Student &temp){
+      Code=temp.Code;
+   }
+   void Display(){
+      cout<<"Register no: "<<Reg<<endl;
+      cout<<"College code: "<<Code<<endl;
+   }
+};
+int main(){
+   int Re,Co;
+   cout<<"Enter Reg.no. and college code: ";
+   cin>>Re>>Co;
+   Student S(Re,Co);
+   Student S1(S);
+   Student S2=S;
+   S.Display();
+   S1.Display();
+   S2.Display();
+}
+[23bee037@mepcolinux Ex3]$c++ Ex2[K3_1.cpp
+[23bee037@mepcolinux Ex3]$,[K./a.out
+Enter Reg.no. and college code: 19543
+9517
+Register no: 19543
+College code: 9517
+Register no: 4196944
+College code: 9517
+Register no: 340831632
+College code: 9517
+[23bee037@mepcolinux Ex3]$ca[Kc[Kat Ex3_2.cpp
+#include<iostream>
+using namespace std;
+class Student{
+    string Name;
+    int Roll,Arrears;
+    float GPA;
+    public:
+    void GetData();
+    void PrintData();
+    float Highest(Student S1[]);
+    float Lowest(Student S1[]);
+};
+void Student::GetData(){
+    cout<<"Enter Name: ";
+    cin>>Name;
+    cout<<"Enter Roll: ";
+    cin>>Roll;
+    cout<<"Enter GPA: ";
+    cin>>GPA;
+    cout<<"Enter No.of Arrears: ";
+    cin>>Arrears;
+}
+void Student::PrintData(){
+    cout<<"Name: "<<Name<<endl;
+    cout<<"Roll: "<<Roll<<endl;
+    cout<<"GPA: "<<GPA<<endl;
+    cout<<"No.of Arrears: "<<Arrears<<endl<<endl;
+}
+float Student::Highest(Student S1[]){
+    int i;
+    float temp=S1[0].GPA;
+    for(i=0;i<4;i++){
+        if(temp<S1[i].GPA) temp=S1[i].GPA;
+    }
+    return temp;
+}
+float Student::Lowest(Student S1[]){
+    int i;
+    float temp=S1[0].GPA;
+    for(i=0;i<4;i++){
+        if(S1[i].GPA<temp) temp=S1[i].GPA;
+    }
+    return temp;
+}
+int main(){
+    Student S[4];
+    int i;
+    for(i=0;i<4;i++){
+        S[i].GetData();
+    }
+    cout<<"Output: "<<endl;
+    for(i=0;i<4;i++){
+        S[i].PrintData();
+    }
+    cout<<"Highest: "<<S[0].Highest(S)<<endl;
+    cout<<"Lowest: "<<S[0].Lowest(S)<<endl;
+}
+[23bee037@mepcolinux Ex3]$c++ Ex3_2.cpp
+[23bee037@mepcolinux Ex3]$./a.out
+Enter Name: dhiesn   nesh
+Enter Roll: 37
+Enter GPA: 8.6
+Enter No.of Arrears: 0
+Enter Name: Gokul
+Enter Roll: 38
+Enter GPA: 7.4
+Enter No.of Arrears: 1
+Enter Name: hari
+Enter Roll: 39
+Enter GPA: 7.5
+Enter No.of Arrears: 0
+Enter Name: harish
+Enter Roll: 40
+Enter GPA: 9.6
+Enter No.of Arrears: 0
+Output: 
+Name: dhinesh
+Roll: 37
+GPA: 8.6
+No.of Arrears: 0
+
+Name: Gokul
+Roll: 38
+GPA: 7.4
+No.of Arrears: 1
+
+Name: hari
+Roll: 39
+GPA: 7.5
+No.of Arrears: 0
+
+Name: harish
+Roll: 40
+GPA: 9.6
+No.of Arrears: 0
+
+Highest: 9.6
+Lowest: 7.4
+[23bee037@mepcolinux Ex3]$exit
+
+Script done on Tue 05 Aug 2025 10:43:15 AM IST
